@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body oncontextmenu="return false">
+	<div id="cont">
+		<p>Идёт печать</p>
+		<img width="500" src="images/print.gif">
+	</div>
+</body>
+<script type="text/javascript">
+	sessionStorage.total_pages = sessionStorage.total_pages - sessionStorage.pages;
+
+	var time = (parseInt(sessionStorage.pages) * 1.5 + 3)*1000;
+	setTimeout(function(){
+		window.location = "take.html";
+	}, time);
+</script>
+</html>

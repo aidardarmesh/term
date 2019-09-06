@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="refresh" content="30">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/auth.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<script src="js/jquery.min.js"></script>
+</head>
+<body oncontextmenu="return false">
+	<div id="name">John Doe</div>
+	<div id="code">Введите код аутентификации</div>
+	<div id="main">
+		<input type="text" id="code-input" readonly="on">
+		<div class="raw">
+			<button class="btn" id="btn1">1</button><button class="btn center-btn" id="btn2">2</button><button class="btn" id="btn3">3</button>
+		</div>
+		<div class="raw">
+			<button class="btn" id="btn4">4</button><button class="btn center-btn" id="btn5">5</button><button class="btn" id="btn6">6</button>
+		</div>
+		<div class="raw">
+			<button class="btn" id="btn7">7</button><button class="btn center-btn" id="btn8">8</button><button class="btn" id="btn9">9</button>
+		</div>
+		<div class="raw">
+			<button class="btn" id="btn0">0</button><button id="del" class="spec-btn">УДАЛИТЬ</button>
+		</div>
+	</div>
+	<div id="footer">
+		<button id="back" class="spec-btn">НАЗАД</button>
+		<button id="next" class="spec-btn">ВПЕРЕД</button>
+	</div>
+	<div id="req">
+		<div id="req-cont">
+			<p>Запрос данных</p>
+			<div id="load"></div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+	$("#name").text(sessionStorage.first + " " + sessionStorage.last);
+	
+	var code = "";
+
+	function showCode(code){
+		$("#code-input").val(code);
+	}
+
+	$("#btn1").on("click", function(){
+		if(code.length < 4)
+		{
+			code += '1';
+			showCode(code);
+		}
+	});
+
+	$("#btn2").on("click", function(){
+		if(code.length < 4)
+		{
+			code += '2';
+			showCode(code);
+		}
+	});
+
+	$("#btn3").on("click", function(){
+		if(code.length < 4)
+		{
+			code += '3';
+			showCode(code);
+		}
+	});
+
+	$("#btn4").on("click", function(){
+		if(code.length < 4)
+		{
+			code += '4';
+			showCode(code);
+		}
+	});
+
+	$("#btn5").on("click", function(){
+		if(code.length < 4)
+		{
+			code += '5';
+			showCode(code);
+		}
+	});
+
+	$("#btn6").on("click", function(){
+		if(code.length < 4)
+		{
+			code += '6';
+			showCode(code);
+		}
+	});
+
+	$("#btn7").on("click", function(){
+		if(code.length < 4)
+		{
+			code += '7';
+			showCode(code);
+		}
+	});
+
+	$("#btn8").on("click", function(){
+		if(code.length < 4)
+		{
+			code += '8';
+			showCode(code);
+		}
+	});
+
+	$("#btn9").on("click", function(){
+		if(code.length < 4)
+		{
+			code += '9';
+			showCode(code);
+		}
+	});
+
+	$("#btn0").on("click", function(){
+		if(code.length < 4)
+		{
+			code += '0';
+			showCode(code);
+		}
+	});
+
+	$("#del").on("click", function(){
+		code = code.substring(0, code.length - 1);
+		showCode(code);
+	});
+
+	$("#back").on("click", function(){
+		window.location = "index.html";
+	});
+
+	$("#next").on("click", function(){
+		if( code.length !== 0 )
+		{
+			
+			$("#req").css({
+				'display': 'block'
+			});
+			
+			if( code == sessionStorage.code )
+			{
+				window.location = "download.html";
+			} else {
+				window.location = "incorrect.html";
+			}
+		}
+	});
+
+</script>
+</html>

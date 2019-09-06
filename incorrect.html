@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- <meta http-equiv="refresh" content="5;url=index.html" /> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body oncontextmenu="return false">
+	<div id="cont">
+		<p>Неправильный код</p>
+		<img width="121" height="121" src="/images/cross.png">
+	</div>
+	<div id="main-cont">
+		<button id="on-main" class="spec-btn">НА ГЛАВНУЮ</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var btnMain = document.getElementById("on-main");
+
+	btnMain.onclick = function(){
+		window.location = "index.html";
+	}
+</script>
+</html>
